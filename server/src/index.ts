@@ -95,15 +95,20 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ error: "server_error" });
 });
 
-app.listen(config.port, async () => {
+app.listen(config.port, () => {
   console.log(`Server on :${config.port} (LLM: ${config.llm.provider}, dev: ${config.devMode})`);
+  startBot().catch((e) => console.error("Bot setup failed, the web app keeps running:", e));
+});
+
+async function startBot() {
   if (!config.botToken) {
     console.warn("BOT_TOKEN is not set: bot and payments are disabled.");
     return;
   }
+  if (!config.webAppUrl) console.warn("WEBAPP_URL is not set: the Play button cannot open the Mini App yet.");
   await setupBot();
   startReminders();
-  if (config.useWebhook) {
+  if (config.useWebhook && config.webAppUrl) {
     await bot.api.setWebhook(`${config.webAppUrl}/bot/${config.webhookSecret}`, {
       allowed_updates: ["message", "pre_checkout_query"],
     });
@@ -113,4 +118,4 @@ app.listen(config.port, async () => {
     void bot.start({ allowed_updates: ["message", "pre_checkout_query"] });
     console.log("Bot polling started");
   }
-});
+}
