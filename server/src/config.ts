@@ -12,8 +12,11 @@ function list(v: string | undefined): number[] {
 export const config = {
   botToken: process.env.BOT_TOKEN ?? "",
   // Public HTTPS URL where the Mini App is served (same server). Required by Telegram.
-  // On Render the public URL is provided automatically.
-  webAppUrl: process.env.WEBAPP_URL ?? process.env.RENDER_EXTERNAL_URL ?? "",
+  // Render and Railway provide the public URL automatically.
+  webAppUrl:
+    process.env.WEBAPP_URL ??
+    process.env.RENDER_EXTERNAL_URL ??
+    (process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : ""),
   // If set, the bot uses a webhook at `${WEBAPP_URL}/bot/<secret>` instead of long polling.
   useWebhook: process.env.USE_WEBHOOK === "1",
   webhookSecret: process.env.WEBHOOK_SECRET ?? "change-me",
