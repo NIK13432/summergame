@@ -1,0 +1,21 @@
+{
+  "startCoins": 0,
+  "energy": { "max": 500, "regenSeconds": 2 },
+  "offlineHoursCap": 3,
+  "upgrades": [
+    { "id": "apron", "name": "Фартук бариста", "emoji": "🧑‍🍳", "desc": "+1 за тап", "baseCost": 50, "mult": 1.6, "tap": 1, "max": 20 },
+    { "id": "espresso", "name": "Своя кофемашина", "emoji": "☕", "desc": "+2 за тап", "baseCost": 400, "mult": 1.7, "tap": 2, "max": 15 },
+    { "id": "lemonade", "name": "Лимонадный ларёк", "emoji": "🍋", "desc": "+60 в час, даже когда тебя нет", "baseCost": 250, "mult": 1.5, "passive": 60, "max": 25 },
+    { "id": "boards", "name": "Прокат сапов", "emoji": "🏄", "desc": "+300 в час", "baseCost": 2000, "mult": 1.55, "passive": 300, "max": 20 },
+    { "id": "blog", "name": "Блог о бухте", "emoji": "📸", "desc": "+1200 в час", "baseCost": 10000, "mult": 1.6, "passive": 1200, "max": 15 }
+  ],
+  "gifts": [
+    { "id": "icecream", "name": "Мороженое", "emoji": "🍦", "cost": 100, "affection": 1 },
+    { "id": "shell", "name": "Красивая ракушка", "emoji": "🐚", "cost": 300, "affection": 2 },
+    { "id": "flowers", "name": "Полевые цветы", "emoji": "💐", "cost": 800, "affection": 4 },
+    { "id": "vinyl", "name": "Старая пластинка", "emoji": "💿", "cost": 2500, "affection": 8 },
+    { "id": "wax", "name": "Воск для доски", "emoji": "🧴", "cost": 2500, "affection": 8 },
+    { "id": "sketchbook", "name": "Скетчбук", "emoji": "📓", "cost": 2500, "affection": 8 }
+  ],
+  "chat": { "freePerDay": 15, "premiumPerDay": 200 }
+}

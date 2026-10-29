@@ -1,0 +1,11 @@
+{
+  "name": "tg-story-clicker",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server ci && npm --prefix web ci",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server start",
+    "dev:server": "DEV_MODE=1 npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev"
+  }
+}

@@ -1,0 +1,7 @@
+[
+  { "id": "premium_7", "title": "Летний пропуск · 7 дней", "description": "Все главы и свидания, x2 энергия и восстановление, 200 сообщений в день", "stars": 99, "grant": { "premiumDays": 7 } },
+  { "id": "premium_30", "title": "Летний пропуск · 30 дней", "description": "Всё из пропуска на месяц — выгоднее почти вдвое", "stars": 299, "badge": "Выгодно", "grant": { "premiumDays": 30 } },
+  { "id": "energy", "title": "Полная энергия", "description": "Мгновенно восстанавливает энергию", "stars": 15, "grant": { "energyRefill": true } },
+  { "id": "coins_10k", "title": "10 000 монет", "description": "Хватит на новую главу или пару подарков", "stars": 49, "grant": { "coins": 10000 } },
+  { "id": "msgs_100", "title": "100 сообщений", "description": "Пиши девушкам сверх дневного лимита. Не сгорают", "stars": 59, "grant": { "msgCredits": 100 } }
+]

@@ -1,0 +1,23 @@
+# Render Blueprint: New → Blueprint → pick this repo. Free plan sleeps after 15 min idle
+# and has no persistent disk, so player progress resets on every restart (fine for a test).
+services:
+  - type: web
+    name: summer-clicker
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: USE_WEBHOOK
+        value: "1"
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: claude-haiku-5-5
+      - key: SUPPORT_CONTACT
+        value: "@your_support"
